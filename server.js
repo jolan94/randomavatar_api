@@ -16,7 +16,8 @@ app.get('/', (req, res) => {
       const file_name = uuidv4() + '.jpg'; // Use a random file name if needed
       const stream = fs.createWriteStream(file_name);
       response.data.pipe(stream);
-      const url = `http://localhost:${port}/${file_name}`;
+      // const url = `http://localhost:${port}/${file_name}`;
+      const url = `https://randomavatar.onrender.com/${file_name}`;
       console.log(url); // Print the URL to console
       // res.send(`Avatar URL printed to console ${url}`);
       res.send(url);
