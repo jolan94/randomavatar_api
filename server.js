@@ -1,6 +1,9 @@
 const express = require('express');
 const axios = require('axios');
 
+const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -43,6 +46,8 @@ app.get('/avatarurl', (req, res) => {
       res.status(500).send('Error generating avatar');
     });
 });
+
+app.use(express.static(__dirname));
 
 
 app.listen(PORT, () => {
